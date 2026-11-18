@@ -594,3 +594,119 @@ h3 { font-size: clamp(22px, 1.8vw, 26px); letter-spacing: -0.03em; }
 @media (max-width: 900px) {
   .app > .largura, .app > .largura { --app-resto: calc(var(--app-alto) + 250px); }
 }
+
+/* ===== PC: mais ar dos lados (nada colado às pontas) e cada secção cabe inteira no ecrã =====
+   As medidas usam também a altura do ecrã (vh), para caber em portáteis baixos e com zoom. */
+@media (min-width: 901px) {
+  :root { --sec: clamp(48px, 9vh, 104px); }
+  .largura { width: min(1080px, 100% - 2 * clamp(48px, 9vw, 180px)); }
+  h1 { font-size: clamp(36px, min(4.4vw, 8vh), 64px); }
+  h2 { font-size: clamp(28px, min(3vw, 5.6vh), 46px); }
+  h3 { font-size: clamp(20px, min(1.6vw, 3vh), 24px); }
+  .lead { font-size: clamp(15.5px, min(1.1vw, 2.3vh), 17.5px); }
+  .rotulo { margin-bottom: 14px; }
+  .cabeca { margin-bottom: clamp(22px, 4.5vh, 48px); }
+  .cabeca .lead { margin-top: 14px; }
+  .botoes { margin-top: clamp(20px, 3.5vh, 32px); }
+  .botao { min-height: 50px; font-size: 15.5px; }
+  .botao-grande { min-height: 54px; font-size: 16px; }
+  .especialistas, .quem, .promessas, .antes-depois, .provas, .perguntas, .empresas, .tecnicos, .comecar { padding: var(--sec) 0; }
+  .app { padding-top: var(--sec); }
+
+  /* O filme */
+  .filme .passos.largura { padding-left: clamp(80px, 10vw, 200px); }
+  .passo h1 { margin-bottom: 20px; }
+  .passo h2 { font-size: clamp(30px, min(3.2vw, 6vh), 48px); margin-bottom: 16px; }
+  .passo-num { font-size: clamp(110px, min(13vw, 24vh), 200px); }
+  .faixa { padding: 14px 0; }
+  .faixa-dentro { font-size: clamp(24px, min(2.8vw, 5vh), 42px); }
+
+  /* A app */
+  .app > .largura > .cabeca h2 { font-size: clamp(26px, min(2.8vw, 5vh), 40px); }
+  .app > .largura > .cabeca { padding: 16px 0 12px; }
+  .app-item h3 { font-size: clamp(26px, min(2.6vw, 4.8vh), 38px); }
+  .app-item p { font-size: 16.5px; }
+
+  /* Antes e depois: o texto à esquerda e o comparador à direita, à altura do ecrã */
+  .ad-grelha { grid-template-columns: minmax(260px, 340px) auto; grid-template-areas: "cab comp" "obra comp"; justify-content: space-between; align-items: start; row-gap: 24px; }
+  .ad-cabeca { grid-area: cab; margin-bottom: 0; }
+  .comparador { grid-area: comp; height: min(calc(100vh - 66px - 2 * var(--sec)), 600px); width: auto; max-width: 100%; }
+  .ad-obra { grid-area: obra; }
+  .ad-obra > .rotulo, .ad-obra h3 { display: none; }
+  .ad-feito { gap: 8px; margin-bottom: 18px; }
+  .ad-feito li { font-size: 15px; }
+  .ad-dados { margin-bottom: 18px; }
+  .ad-dados div { padding: 10px 0; }
+  .ad-dados dd { font-size: 28px; }
+  .ad-obra blockquote { display: none; }
+
+  /* Especialistas */
+  .esp-lista button { padding: clamp(10px, 2vh, 20px) 0 clamp(10px, 2vh, 18px); }
+  .esp-lista span { font-size: clamp(24px, min(2.8vw, 5.2vh), 42px); }
+  .esp-palco { min-height: 0; max-height: calc(100vh - 66px - 2 * var(--sec) - 100px); }
+  .esp-palco img { width: auto; height: 86%; max-width: 84%; object-fit: contain; }
+
+  /* Avaliações */
+  .numeros li { padding: clamp(14px, 2.6vh, 24px) 20px clamp(14px, 2.6vh, 24px) 0; }
+  .numeros li + li { padding-left: 20px; }
+  .numeros b { font-size: clamp(32px, min(3.4vw, 6.4vh), 54px); }
+  .opinioes { margin-top: clamp(20px, 4vh, 40px); }
+  .opinioes li { gap: 14px; padding: clamp(18px, 3vh, 28px); }
+  .opinioes blockquote { font-size: clamp(16px, min(1.3vw, 2.4vh), 19px); }
+  .estrelas { font-size: 16px; }
+  .iniciais { width: 38px; height: 38px; font-size: 14px; }
+
+  /* Para quem */
+  .moldura { aspect-ratio: 16 / 10; margin-bottom: 10px; }
+  .moldura .pato { width: auto; height: 92%; }
+  .tres article { gap: 8px; }
+
+  /* Promessas e "Como funciona" das outras páginas */
+  .quatro li { grid-template-columns: 60px minmax(0, 1fr) minmax(0, 1fr); padding: clamp(14px, 2.6vh, 26px) 0; }
+  .quatro b { font-size: clamp(24px, min(2.6vw, 4.8vh), 38px); }
+
+  /* Perguntas */
+  .lista-perguntas summary { padding: clamp(14px, 2.4vh, 22px) 0; font-size: clamp(17px, min(1.5vw, 2.8vh), 22px); }
+  .lista-perguntas summary i { width: 30px; height: 30px; }
+  .lista-perguntas details p { font-size: 16px; padding-bottom: 20px; }
+
+  /* Começar */
+  .comecar h2 { font-size: clamp(34px, min(4.6vw, 9vh), 70px); }
+  .comecar .pato { width: auto; max-width: 100%; max-height: calc(100vh - 66px - 2 * var(--sec)); justify-self: center; }
+
+  /* Páginas dos técnicos e das empresas */
+  .tec-heroi { padding-top: clamp(90px, 16vh, 150px); }
+  .tec-heroi h1 { font-size: clamp(34px, min(4vw, 7.4vh), 58px); }
+  .tec-heroi-pato { width: auto; max-width: 78%; max-height: 48vh; }
+  .numeros-tec { margin-top: clamp(24px, 5vh, 56px); }
+  .tecnicos h2 { margin-bottom: 16px; }
+  .xp { margin: clamp(18px, 3.5vh, 30px) 0; }
+  .tec-visual { min-height: 0; height: min(500px, calc(100vh - 66px - 2 * var(--sec))); }
+  .telemovel-tec { height: 92%; }
+  .vantagens li { padding: 16px 0; }
+  .vantagens b { font-size: 20px; }
+  .empresas .moldura { aspect-ratio: auto; height: min(460px, calc(100vh - 66px - 2 * var(--sec))); }
+  .lista-visto { gap: 10px; margin: 20px 0 24px; }
+  .lista-visto li { font-size: 15.5px; }
+}
+
+/* O telemóvel com a moldura fina (a moldura preta grossa pesava demais) */
+.telemovel { padding: 5px; background: #1c2130; border-radius: 40px; box-shadow: 0 40px 70px -30px rgb(14 31 61 / 0.4), inset 0 0 0 1.5px #3a4152; }
+.telemovel-ecra { border-radius: 35px; }
+@media (max-width: 900px) {
+  .telemovel, .telemovel-tec { padding: 4px; border-radius: 28px; }
+  .telemovel-ecra { border-radius: 24px; }
+}
+
+/* Para quem: os patos inteiros dentro da moldura, sem cortes */
+.tres .moldura { display: grid; place-items: center; }
+.tres .moldura .pato { width: auto; height: 84%; max-width: 88%; object-fit: contain; }
+@media (max-width: 900px) { .tres .moldura .pato { height: auto; width: 76%; } }
+
+/* O telemóvel com cantos menos redondos */
+.telemovel, .telemovel-tec { border-radius: 22px; }
+.telemovel-ecra { border-radius: 18px; }
+@media (max-width: 900px) {
+  .telemovel, .telemovel-tec { border-radius: 18px; }
+  .telemovel-ecra { border-radius: 14px; }
+}
