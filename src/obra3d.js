@@ -108,7 +108,7 @@ export function iniciaObra(palco, { aoPronto } = {}) {
   ajusta();
   window.addEventListener("resize", ajusta);
 
-  new GLTFLoader().load("/3d/obra.glb", (gltf) => {
+  new GLTFLoader().load(`${import.meta.env.BASE_URL}3d/obra.glb`, (gltf) => {
     const raiz = gltf.scene;
     raiz.traverse((o) => {
       if (o.name && !obj[o.name]) obj[o.name] = o;

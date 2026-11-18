@@ -6,7 +6,7 @@ import "./estilo.css";
 import Lenis from "lenis";
 
 // O endereço da app. Em desenvolvimento, a app corre em localhost:5174. Trocar pelo endereço real antes de publicar.
-export const ENDERECO_APP = "http://localhost:5174";
+export const ENDERECO_APP = import.meta.env.DEV ? "http://localhost:5174" : "#comecar";
 // As lojas: a app ainda não está publicada. Trocar pelos endereços reais quando estiver.
 const LOJAS = { apple: "#", google: "#" };
 

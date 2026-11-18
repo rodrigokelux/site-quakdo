@@ -55,7 +55,7 @@ let desenhada = "", alvo = 0, atual = 0;
 function carrega(i) {
   const img = new Image();
   img.decoding = "async";
-  img.src = `/filme/${String(i).padStart(3, "0")}.webp`;
+  img.src = `${import.meta.env.BASE_URL}filme/${String(i).padStart(3, "0")}.webp`;
   img.onload = () => { imagens[i] = img; desenhada = ""; };
 }
 // Primeiro uma em cada quatro (para haver logo filme inteiro), depois as restantes.
@@ -66,7 +66,7 @@ let video = null, duracao = 0, tempoAtual = 0, tFilme = 0;
 // A obra em 3D ao vivo (Three.js). Sem WebGL, fica o vídeo ou a sequência de imagens.
 const obra = parado ? null : iniciaObra($(".palco"), { aoPronto: () => { tela.remove(); document.body.classList.add("obra-viva"); } });
 let tSuave = 0;
-(obra ? Promise.resolve(null) : fetch("/filme.mp4")).then((r) => (r.ok && (r.headers.get("content-type") || "").includes("video") ? r.blob() : null)).catch(() => null).then((b) => {
+(obra ? Promise.resolve(null) : fetch(`${import.meta.env.BASE_URL}filme.mp4`)).then((r) => (r.ok && (r.headers.get("content-type") || "").includes("video") ? r.blob() : null)).catch(() => null).then((b) => {
   if (obra) return;
   if (b) {
     const v = document.createElement("video");
@@ -83,7 +83,7 @@ let tSuave = 0;
     v.load();
     return;
   }
-  return fetch("/filme/n.json").then((r) => (r.ok ? r.json() : null)).catch(() => null).then((j) => {
+  return fetch(`${import.meta.env.BASE_URL}filme/n.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null).then((j) => {
   if (j?.n) N_IMAGENS = j.n;
   imagens = new Array(N_IMAGENS);
   // Primeiro uma em cada oito (para haver logo filme inteiro), depois as restantes.
