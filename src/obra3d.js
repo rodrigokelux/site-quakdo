@@ -90,7 +90,7 @@ export function iniciaObra(palco, { aoPronto } = {}) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, estreito() ? 1.5 : 2));
     renderer.setSize(L, A, false);
     camara.aspect = L / A;
-    afastar = estreito() ? 1 : 1.18;
+    afastar = estreito() ? 1 : 1.36;
     if (estreito()) {
       // Telemóvel: a obra mais pequena e no topo, por cima do texto.
       camara.fov = 34;

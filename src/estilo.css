@@ -25,13 +25,13 @@ h1, h2, h3, p, ul, ol { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 h1, h2, h3 { font-family: var(--titulo); font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
-h1 { font-size: clamp(42px, 6.3vw, 86px); }
+h1 { font-size: clamp(42px, 5vw, 70px); }
 .linha { white-space: nowrap; }
-h2 { font-size: clamp(34px, 5vw, 72px); }
-h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
-.largura { width: min(1240px, 100% - 48px); margin-inline: auto; }
+h2 { font-size: clamp(32px, 3.6vw, 52px); }
+h3 { font-size: clamp(22px, 1.8vw, 26px); letter-spacing: -0.03em; }
+.largura { width: min(1180px, 100% - 48px); margin-inline: auto; }
 .azul { color: var(--azul); }
-.lead { font-size: clamp(17px, 1.35vw, 20px); color: var(--cinza); max-width: 31em; }
+.lead { font-size: clamp(16.5px, 1.15vw, 18px); color: var(--cinza); max-width: 31em; }
 .rotulo { display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cinza); margin-bottom: 22px; }
 .rotulo b { font-weight: 600; color: var(--azul); }
 .saltar { position: absolute; left: -999px; }
@@ -75,7 +75,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .botao-claro { --fundo: #fff; --cor: var(--tinta); --sobre: var(--amarelo); --cor-sobre: var(--tinta); }
 .botao-linha { --fundo: transparent; --cor: var(--tinta); box-shadow: inset 0 0 0 1px var(--tinta); }
 .botao-pequeno { min-height: 42px; padding: 0 14px 0 18px; font-size: 14.5px; gap: 12px; }
-.botao-grande { min-height: 66px; padding: 0 28px 0 32px; font-size: 18px; }
+.botao-grande { min-height: 60px; padding: 0 24px 0 28px; font-size: 17px; }
 .botoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 
 /* Barra do topo */
@@ -106,15 +106,15 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .veu { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgb(34 69 154 / 0.97) 0%, rgb(34 69 154 / 0.9) 30%, rgb(34 69 154 / 0) 48%); }
 .passos { position: relative; z-index: 2; margin-top: -100vh; margin-top: -100dvh; }
 .filme .passos.largura { width: auto; margin-inline: 0; padding-left: clamp(70px, 7vw, 150px); }
-.passo { position: relative; min-height: var(--alto, 100vh); display: grid; align-content: center; justify-items: start; width: min(38vw, 620px); padding: 120px 0 80px clamp(0px, 4vw, 70px); }
+.passo { position: relative; min-height: var(--alto, 100vh); display: grid; align-content: center; justify-items: start; width: min(34vw, 520px); padding: 120px 0 80px clamp(0px, 4vw, 70px); }
 .passo.heroi { min-height: 100vh; min-height: 100dvh; padding-top: 110px; }
 .passo:not(.heroi) { display: block; align-content: start; padding: 26vh 0 30vh clamp(0px, 4vw, 70px); }
 .passo-texto { position: sticky; top: 26vh; display: grid; justify-items: start; }
 .legenda { display: none; }
 .filme-barras { display: none; }
 .passo h1 { margin-bottom: 28px; }
-.passo h2 { font-size: clamp(40px, 5.4vw, 80px); margin-bottom: 22px; }
-.passo-num { position: absolute; left: clamp(-20px, 1vw, 30px); top: 50%; translate: 0 -82%; z-index: -1; font-family: var(--titulo); font-weight: 800; font-size: clamp(160px, 22vw, 340px); line-height: 1; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.16); pointer-events: none; }
+.passo h2 { font-size: clamp(36px, 3.6vw, 52px); margin-bottom: 22px; }
+.passo-num { position: absolute; left: clamp(-20px, 1vw, 30px); top: 50%; translate: 0 -82%; z-index: -1; font-family: var(--titulo); font-weight: 800; font-size: clamp(140px, 16vw, 240px); line-height: 1; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.16); pointer-events: none; }
 .filme .amarelo { color: var(--amarelo); }
 .filme .lead { color: rgb(255 255 255 / 0.84); }
 .filme .rotulo { color: rgb(255 255 255 / 0.75); }
@@ -153,19 +153,19 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .faixa-dentro i { font-style: normal; font-size: 0.4em; color: var(--azul); }
 
 /* Cabeçalhos de secção */
-.cabeca { max-width: 980px; margin-bottom: clamp(40px, 6vw, 84px); }
+.cabeca { max-width: 860px; margin-bottom: clamp(36px, 4.5vw, 64px); }
 .cabeca .lead { margin-top: 24px; }
 
 /* A app: o telemóvel e o texto ficam presos ao ecrã; ao descer, o texto troca no mesmo sítio (não passa a correr) */
-.app { position: relative; padding: clamp(80px, 11vw, 160px) 0 clamp(40px, 6vw, 80px); background: var(--papel); }
+.app { position: relative; padding: clamp(72px, 8vw, 120px) 0 clamp(40px, 6vw, 80px); background: var(--papel); }
 /* O título da secção fica preso por cima enquanto o telemóvel e o texto trocam por baixo dele. */
 .app > .largura > .cabeca { position: sticky; top: 66px; z-index: 3; max-width: none; margin-bottom: 0; padding: 22px 0 18px; background: var(--papel); }
 .app > .largura > .cabeca .rotulo { margin-bottom: 12px; }
-.app > .largura > .cabeca h2 { font-size: clamp(34px, 4vw, 60px); }
+.app > .largura > .cabeca h2 { font-size: clamp(30px, 3.2vw, 46px); }
 .app-grelha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 100px); align-items: start; height: calc(6 * 62vh + 100vh); }
 .app-palco { position: sticky; top: calc(66px + var(--app-cab, 150px)); height: calc(100vh - 86px - var(--app-cab, 150px)); height: calc(100dvh - 86px - var(--app-cab, 150px)); display: grid; place-items: center; perspective: 1400px; }
 .app-luz { position: absolute; width: 78%; aspect-ratio: 1; background: radial-gradient(circle, rgb(250 197 24 / 0.55), rgb(250 197 24 / 0) 68%); }
-.telemovel { position: relative; height: min(78%, 680px); aspect-ratio: 340 / 740; padding: 11px; background: #12151d; border-radius: 46px; box-shadow: 0 50px 80px -30px rgb(14 31 61 / 0.45), inset 0 0 0 2px #2b303c; transform-style: preserve-3d; rotate: y var(--gira, -14deg); transition: rotate 0.9s var(--curva); }
+.telemovel { position: relative; height: min(74%, 600px); aspect-ratio: 340 / 740; padding: 11px; background: #12151d; border-radius: 46px; box-shadow: 0 50px 80px -30px rgb(14 31 61 / 0.45), inset 0 0 0 2px #2b303c; transform-style: preserve-3d; rotate: y var(--gira, -14deg); transition: rotate 0.9s var(--curva); }
 .telemovel-ecra { position: relative; height: 100%; overflow: hidden; border-radius: 36px; background: #fff; }
 .telemovel-ecra img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; translate: 0 6%; scale: 1.02; transition: opacity 0.5s, translate 0.8s var(--curva), scale 0.8s var(--curva); }
 .telemovel-ecra img.ativo { opacity: 1; translate: 0 0; scale: 1; }
@@ -181,7 +181,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .app-item { grid-area: 2 / 1; display: grid; align-content: center; gap: 12px; color: var(--cinza); opacity: 0; translate: 0 22px; pointer-events: none; transition: opacity 0.35s ease, translate 0.6s var(--curva); }
 .app-item.ativo { opacity: 1; translate: 0 0; pointer-events: auto; transition-delay: 0.12s; }
 .app-item b { font-size: 13px; font-weight: 500; letter-spacing: 0.12em; color: var(--azul); }
-.app-item h3 { font-size: clamp(30px, 3.6vw, 52px); color: var(--tinta); }
+.app-item h3 { font-size: clamp(28px, 2.8vw, 40px); color: var(--tinta); }
 .app-item p { max-width: 28em; font-size: 18px; }
 
 /* O ranking dos técnicos dentro do telemóvel, refeito como o ecrã da app */
@@ -212,7 +212,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .rk-lista em { font-style: normal; font-size: 9px; color: #5b6480; }
 
 /* Especialistas: uma lista grande à esquerda, o pato do ofício à direita */
-.especialistas { padding: clamp(80px, 11vw, 160px) 0; }
+.especialistas { padding: clamp(72px, 8vw, 120px) 0; }
 .esp-grelha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: clamp(24px, 5vw, 80px); align-items: stretch; }
 .esp-lista { border-top: 1px solid var(--tinta); }
 .esp-lista li { border-bottom: 1px solid var(--linha); }
@@ -240,7 +240,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .balao.visivel { opacity: 1; translate: 0 0; }
 
 /* Para quem: três colunas separadas por linhas */
-.quem { padding: clamp(80px, 11vw, 160px) 0; background: var(--papel); }
+.quem { padding: clamp(72px, 8vw, 120px) 0; background: var(--papel); }
 .quem .tres { border-top-color: var(--tinta); }
 .quem .moldura { position: relative; isolation: isolate; background: radial-gradient(ellipse 60% 55% at 50% 58%, #3d68c9, var(--azul) 72%); }
 .quem .moldura::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url("/azulejo-flor.png") center / 96px 96px; opacity: 0.1; }
@@ -257,12 +257,12 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .tres p:last-child { color: var(--cinza); }
 
 /* Técnicos */
-.tecnicos { background: var(--noite); color: #fff; padding: clamp(80px, 11vw, 160px) 0; }
+.tecnicos { background: var(--noite); color: #fff; padding: clamp(72px, 8vw, 120px) 0; }
 .tecnicos-grelha { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(32px, 6vw, 90px); align-items: center; }
 .tecnicos { overflow: hidden; }
-.tec-visual { position: relative; display: grid; place-items: center; min-height: 560px; perspective: 1400px; }
+.tec-visual { position: relative; display: grid; place-items: center; min-height: 500px; perspective: 1400px; }
 .tec-visual::before { content: ""; position: absolute; width: 90%; aspect-ratio: 1; background: radial-gradient(circle, rgb(45 85 180 / 0.6), rgb(45 85 180 / 0) 68%); }
-.telemovel-tec { height: 540px; --gira: 12deg; }
+.telemovel-tec { height: 480px; --gira: 12deg; }
 .tec-pato { position: absolute; width: 46%; left: -6%; bottom: -2%; rotate: 4deg; z-index: 2; }
 .vantagens { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; margin-top: 30px; }
 .tecnicos .rotulo { color: #9fb0d4; }
@@ -283,36 +283,36 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .vantagens li:nth-child(2) { transition-delay: 0.08s; } .vantagens li:nth-child(3) { transition-delay: 0.16s; } .vantagens li:nth-child(4) { transition-delay: 0.24s; }
 
 /* Promessas */
-.promessas { padding: clamp(80px, 11vw, 160px) 0; }
+.promessas { padding: clamp(72px, 8vw, 120px) 0; }
 .quatro { border-top: 1px solid var(--tinta); }
 .quatro li { position: relative; display: grid; grid-template-columns: 90px minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: baseline; gap: 24px; padding: 34px 0; border-bottom: 1px solid var(--linha); color: var(--cinza); font-size: 17px; isolation: isolate; }
 .quatro li::before { content: ''; position: absolute; inset: 0 -24px; z-index: -1; background: var(--amarelo); scale: 1 0; transform-origin: 50% 100%; transition: scale 0.55s var(--curva); }
 .quatro li:hover::before { scale: 1 1; }
 .quatro li:hover { color: var(--tinta); }
 .quatro i { font-style: normal; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; color: var(--azul); }
-.quatro b { font-family: var(--titulo); font-weight: 800; font-size: clamp(30px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.04em; color: var(--tinta); transition: translate 0.55s var(--curva); }
+.quatro b { font-family: var(--titulo); font-weight: 800; font-size: clamp(28px, 3.2vw, 46px); line-height: 1; letter-spacing: -0.04em; color: var(--tinta); transition: translate 0.55s var(--curva); }
 .quatro li:hover b { translate: 14px 0; }
 .quatro li:nth-child(2) { transition-delay: 0.08s; } .quatro li:nth-child(3) { transition-delay: 0.16s; } .quatro li:nth-child(4) { transition-delay: 0.24s; }
 
 /* A história do nome */
-.historia { padding: clamp(80px, 11vw, 160px) 0; border-top: 1px solid var(--linha); }
+.historia { padding: clamp(72px, 8vw, 120px) 0; border-top: 1px solid var(--linha); }
 .nome { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .nome-metade { display: grid; align-content: start; gap: 2px; padding: clamp(40px, 6vw, 84px) clamp(24px, 4vw, 56px); background: var(--papel); }
 .nome-metade:last-child { background: var(--azul); color: #fff; transition-delay: 0.12s; }
-.nome-metade strong { font-family: var(--titulo); font-weight: 800; font-size: clamp(84px, 15vw, 230px); line-height: 0.95; letter-spacing: -0.06em; color: var(--azul); }
+.nome-metade strong { font-family: var(--titulo); font-weight: 800; font-size: clamp(72px, 12vw, 180px); line-height: 0.95; letter-spacing: -0.06em; color: var(--azul); }
 .nome-metade:last-child strong { color: var(--amarelo); }
 .nome-metade b { font-family: var(--titulo); font-weight: 800; font-size: 28px; letter-spacing: -0.03em; margin-top: 26px; }
 .nome-metade span { color: var(--cinza); }
 .nome-metade:last-child span { color: #d5def3; }
 
 /* Começar */
-.comecar { position: relative; background: var(--noite); color: #fff; padding: clamp(80px, 11vw, 150px) 0; overflow: hidden; isolation: isolate; }
+.comecar { position: relative; background: var(--noite); color: #fff; padding: clamp(72px, 8vw, 116px) 0; overflow: hidden; isolation: isolate; }
 .comecar-azulejos { position: absolute; inset: -20%; z-index: -1; opacity: 0.045; background: url("/azulejo-flor.png") 0 0 / 120px 120px; rotate: -8deg; animation: desliza 40s linear infinite; }
 @keyframes desliza { to { background-position: 240px 120px; } }
 .comecar .azul { color: var(--amarelo); }
 .comecar-dentro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); align-items: center; gap: 24px; }
 .comecar .rotulo { color: rgb(255 255 255 / 0.75); }
-.comecar h2 { font-size: clamp(40px, 6.6vw, 112px); margin-bottom: 24px; }
+.comecar h2 { font-size: clamp(40px, 5vw, 80px); margin-bottom: 24px; }
 .comecar h2 .linha { white-space: nowrap; }
 .comecar .lead { color: rgb(255 255 255 / 0.85); }
 .comecar .pato { width: 100%; }
@@ -433,7 +433,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .botao-linha-claro { --fundo: transparent; --cor: #fff; --sobre: #fff; --cor-sobre: var(--tinta); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.7); }
 
 /* Antes e depois: duas imagens da mesma obra, cortadas por uma pega que se arrasta */
-.antes-depois { padding: clamp(80px, 11vw, 160px) 0; }
+.antes-depois { padding: clamp(72px, 8vw, 120px) 0; }
 .ad-grelha { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
 .comparador { --corte: 50%; position: relative; isolation: isolate; aspect-ratio: 4 / 3; overflow: hidden; background: radial-gradient(ellipse 62% 58% at 50% 56%, #3d68c9, var(--azul) 74%); user-select: none; touch-action: pan-y; cursor: ew-resize; }
 .comparador::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url("/azulejo-flor.png") center / 110px 110px; opacity: 0.1; }
@@ -464,13 +464,13 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .ad-obra cite { display: block; margin-top: 8px; font-family: var(--letra); font-size: 14px; font-style: normal; font-weight: 400; color: var(--cinza); }
 
 /* Números e avaliações */
-.provas { position: relative; isolation: isolate; overflow: hidden; background: var(--azul); color: #fff; padding: clamp(80px, 11vw, 160px) 0; }
+.provas { position: relative; isolation: isolate; overflow: hidden; background: var(--azul); color: #fff; padding: clamp(72px, 8vw, 120px) 0; }
 .provas-azulejos { position: absolute; inset: 0; z-index: -1; background: url("/azulejo-flor.png") 0 0 / 120px 120px; opacity: 0.06; }
 .provas .rotulo { color: rgb(255 255 255 / 0.75); }
 .numeros { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgb(255 255 255 / 0.3); }
 .numeros li { display: grid; gap: 8px; padding: 28px 24px 30px 0; }
 .numeros li + li { padding-left: 24px; border-left: 1px solid rgb(255 255 255 / 0.18); }
-.numeros b { font-family: var(--titulo); font-size: clamp(42px, 5.4vw, 84px); font-weight: 800; line-height: 1; letter-spacing: -0.05em; white-space: nowrap; }
+.numeros b { font-family: var(--titulo); font-size: clamp(40px, 4.2vw, 64px); font-weight: 800; line-height: 1; letter-spacing: -0.05em; white-space: nowrap; }
 .numeros b i { font-style: normal; font-size: 0.5em; color: var(--amarelo); margin-left: 6px; vertical-align: 0.5em; }
 .numeros li > span { font-size: 15px; color: rgb(255 255 255 / 0.78); }
 .opinioes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); margin-top: clamp(40px, 6vw, 80px); }
@@ -483,7 +483,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .iniciais { display: grid; place-items: center; width: 46px; height: 46px; flex: none; background: var(--amarelo); color: var(--tinta); font-family: var(--titulo); font-weight: 800; font-size: 16px; }
 
 /* Perguntas frequentes */
-.perguntas { padding: clamp(80px, 11vw, 160px) 0; background: var(--papel); }
+.perguntas { padding: clamp(72px, 8vw, 120px) 0; background: var(--papel); }
 .perguntas-grelha { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 100px); align-items: start; }
 .perguntas .cabeca { position: sticky; top: 110px; margin-bottom: 0; }
 .lista-perguntas { border-top: 1px solid var(--tinta); }
@@ -516,16 +516,16 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .tec-heroi::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 50% 60% at 78% 45%, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0) 70%); }
 .tec-heroi-grelha { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: center; gap: clamp(24px, 4vw, 60px); }
 .tec-heroi .rotulo { color: rgb(255 255 255 / 0.75); }
-.tec-heroi h1 { margin-bottom: 26px; font-size: clamp(38px, 4.8vw, 72px); }
+.tec-heroi h1 { margin-bottom: 26px; font-size: clamp(38px, 4.2vw, 60px); }
 .tec-heroi .lead { color: rgb(255 255 255 / 0.85); }
 .tec-heroi .botoes .botao-amarelo { --sobre: #fff; }
-.tec-heroi-pato { width: 100%; animation: flutua 6s ease-in-out infinite; }
+.tec-heroi-pato { width: 78%; justify-self: center; animation: flutua 6s ease-in-out infinite; }
 @keyframes flutua { 50% { translate: 0 -12px; } }
 .numeros-tec { margin-top: clamp(40px, 6vw, 70px); }
 .pagina-tec .tecnicos .tec-pato { left: auto; right: -8%; rotate: -4deg; }
 
 /* Página dos técnicos: empresas */
-.empresas { padding: clamp(80px, 11vw, 160px) 0; background: var(--papel); }
+.empresas { padding: clamp(72px, 8vw, 120px) 0; background: var(--papel); }
 .empresas-grelha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 6vw, 100px); }
 .empresas .moldura { position: relative; isolation: isolate; margin: 0; background: radial-gradient(ellipse 60% 55% at 50% 58%, #3d68c9, var(--azul) 72%); }
 .empresas .moldura::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url("/azulejo-flor.png") center / 96px 96px; opacity: 0.1; }
