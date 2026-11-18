@@ -269,7 +269,7 @@ $(".app-lista").prepend(appPassos);
 const appSegmentos = $$("i", appPassos);
 // No telemóvel, o título da secção fica preso por cima; o telemóvel e o texto arrumam-se por baixo dele.
 const appCabeca = $(".app > .largura > .cabeca");
-const medeCabeca = () => appGrelha.style.setProperty("--app-cab", `${appCabeca.offsetHeight}px`);
+const medeCabeca = () => appCabeca.parentElement.style.setProperty("--app-cab", `${appCabeca.offsetHeight}px`);
 medeCabeca();
 window.addEventListener("resize", medeCabeca);
 document.fonts?.ready.then(medeCabeca);

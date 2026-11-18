@@ -380,8 +380,8 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
   /* O telemóvel e o texto, juntos, ficam por baixo do título da secção (também preso): o texto em baixo (250px) e o telemóvel no meio. */
   .app > .largura > .cabeca { position: sticky; top: 58px; z-index: 3; margin-bottom: 0; padding: 14px 0 12px; background: var(--papel); }
   .app > .largura > .cabeca .rotulo { margin-bottom: 10px; }
-  .app-grelha { --app-topo: calc(58px + var(--app-cab, 130px)); --app-alto: min(48vh, 100vh - 58px - var(--app-cab, 130px) - 240px); }
-  @supports (height: 1dvh) { .app-grelha { --app-alto: min(48dvh, 100dvh - 58px - var(--app-cab, 130px) - 240px); } }
+  .app > .largura { --app-topo: calc(58px + var(--app-cab, 130px)); --app-alto: min(48vh, 100vh - 58px - var(--app-cab, 130px) - 240px); }
+  @supports (height: 1dvh) { .app > .largura { --app-alto: min(48dvh, 100dvh - 58px - var(--app-cab, 130px) - 240px); } }
   /* A margem do palco e a margem negativa do texto fazem os dois soltarem-se do ecrã juntos, no fim da secção. */
   .app-palco { top: var(--app-topo); height: var(--app-alto); z-index: 2; margin-bottom: 250px; }
   .telemovel { height: 90%; border-radius: 30px; padding: 7px; }
@@ -581,4 +581,14 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
   .menu-aberto .logo-branco { opacity: 1; }
   .menu-aberto .barra .botao-pequeno { visibility: hidden; }
   body.menu-aberto { overflow: hidden; }
+}
+
+/* A app: o título sai do ecrã junto com o telemóvel e o texto. A margem por baixo do título (do tamanho do palco)
+   faz o título soltar-se ao mesmo tempo; a margem negativa da grelha compensa, para nada mudar de sítio. */
+.app > .largura { --app-resto: calc(100vh - 86px - var(--app-cab, 150px)); }
+@supports (height: 1dvh) { .app > .largura { --app-resto: calc(100dvh - 86px - var(--app-cab, 150px)); } }
+.app > .largura > .cabeca { margin-bottom: var(--app-resto); }
+.app-grelha { margin-top: calc(-1 * var(--app-resto)); }
+@media (max-width: 900px) {
+  .app > .largura, .app > .largura { --app-resto: calc(var(--app-alto) + 250px); }
 }
