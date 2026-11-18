@@ -710,3 +710,16 @@ h3 { font-size: clamp(22px, 1.8vw, 26px); letter-spacing: -0.03em; }
   .telemovel, .telemovel-tec { border-radius: 18px; }
   .telemovel-ecra { border-radius: 14px; }
 }
+
+/* Para quem: o pato fica sempre ao centro da moldura, inteiro (posição absoluta, com altura fixa em relação à moldura) */
+.tres .moldura { position: relative; }
+.tres .moldura .pato { position: absolute; inset: 0; margin: auto; width: auto; height: 96%; max-width: 92%; object-fit: contain; }
+@media (max-width: 900px) { .tres .moldura .pato { width: auto; height: 82%; } }
+
+/* O menu de cima nunca parte em duas linhas */
+.barra-nav a { white-space: nowrap; }
+@media (min-width: 901px) and (max-width: 1240px) {
+  .barra-dentro { gap: 18px; }
+  .barra-nav { gap: 18px; }
+  .barra-nav a { font-size: 13.5px; }
+}
