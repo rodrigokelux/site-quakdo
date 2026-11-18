@@ -385,7 +385,9 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
   /* A margem do palco e a margem negativa do texto fazem os dois soltarem-se do ecrã juntos, no fim da secção. */
   .app-palco { top: var(--app-topo); height: var(--app-alto); z-index: 2; margin-bottom: 250px; }
   .telemovel { height: 90%; border-radius: 30px; padding: 7px; }
-  .app-pato { width: 30%; right: 4%; bottom: 2%; }
+  /* O pato e a luz medem-se pela altura do palco (não pela largura), para ficarem à escala do telemóvel em qualquer ecrã. */
+  .app-pato { width: calc(var(--app-alto) * 0.34); right: auto; left: calc(50% + var(--app-alto) * 0.14); bottom: 2%; }
+  .app-luz { width: calc(var(--app-alto) * 0.95); }
   .telemovel-ecra { border-radius: 24px; }
   .app-conta { display: none; }
   .app-grelha { height: calc(6 * 55vh + 100vh); align-content: start; }
