@@ -158,8 +158,12 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 
 /* A app: o telemóvel e o texto ficam presos ao ecrã; ao descer, o texto troca no mesmo sítio (não passa a correr) */
 .app { position: relative; padding: clamp(80px, 11vw, 160px) 0 clamp(40px, 6vw, 80px); background: var(--papel); }
+/* O título da secção fica preso por cima enquanto o telemóvel e o texto trocam por baixo dele. */
+.app > .largura > .cabeca { position: sticky; top: 66px; z-index: 3; max-width: none; margin-bottom: 0; padding: 22px 0 18px; background: var(--papel); }
+.app > .largura > .cabeca .rotulo { margin-bottom: 12px; }
+.app > .largura > .cabeca h2 { font-size: clamp(34px, 4vw, 60px); }
 .app-grelha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 100px); align-items: start; height: calc(6 * 62vh + 100vh); }
-.app-palco { position: sticky; top: 90px; height: calc(100vh - 120px); height: calc(100dvh - 120px); display: grid; place-items: center; perspective: 1400px; }
+.app-palco { position: sticky; top: calc(66px + var(--app-cab, 150px)); height: calc(100vh - 86px - var(--app-cab, 150px)); height: calc(100dvh - 86px - var(--app-cab, 150px)); display: grid; place-items: center; perspective: 1400px; }
 .app-luz { position: absolute; width: 78%; aspect-ratio: 1; background: radial-gradient(circle, rgb(250 197 24 / 0.55), rgb(250 197 24 / 0) 68%); }
 .telemovel { position: relative; height: min(78%, 680px); aspect-ratio: 340 / 740; padding: 11px; background: #12151d; border-radius: 46px; box-shadow: 0 50px 80px -30px rgb(14 31 61 / 0.45), inset 0 0 0 2px #2b303c; transform-style: preserve-3d; rotate: y var(--gira, -14deg); transition: rotate 0.9s var(--curva); }
 .telemovel-ecra { position: relative; height: 100%; overflow: hidden; border-radius: 36px; background: #fff; }
@@ -168,7 +172,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.03em; }
 .app-pato { position: absolute; width: 34%; right: 2%; bottom: 4%; rotate: -6deg; z-index: 2; }
 .app-conta { position: absolute; left: 0; bottom: 8%; font-size: 12.5px; letter-spacing: 0.12em; color: var(--cinza); }
 .app-conta b { font-family: var(--titulo); font-size: 30px; font-weight: 800; letter-spacing: -0.03em; color: var(--azul); margin-right: 4px; }
-.app-lista { position: sticky; top: 90px; height: calc(100vh - 120px); height: calc(100dvh - 120px); display: grid; grid-template-rows: auto auto; align-content: center; gap: 30px; }
+.app-lista { position: sticky; top: calc(66px + var(--app-cab, 150px)); height: calc(100vh - 86px - var(--app-cab, 150px)); height: calc(100dvh - 86px - var(--app-cab, 150px)); display: grid; grid-template-rows: auto auto; align-content: center; gap: 30px; }
 /* Os seis passos da app, em segmentos que se enchem (como as histórias do Instagram) */
 .app-passos { grid-area: 1 / 1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; max-width: 420px; }
 .app-passos i { position: relative; height: 4px; background: var(--linha); overflow: hidden; }

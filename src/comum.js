@@ -189,7 +189,24 @@ export function iniciaComum() {
       vigia.unobserve(en.target);
     }
   }, { threshold: 0.25 });
-  $$(".revela, [data-palavras]:not(h1)").forEach((el) => vigia.observe(el));
+  const porRevelar = new Set($$(".revela, [data-palavras]:not(h1)"));
+  porRevelar.forEach((el) => vigia.observe(el));
+  // Reforço: depois de um salto grande (um link do menu, por exemplo), o que já está no ecrã revela-se na mesma.
+  const revelaVisiveis = () => {
+    for (const el of porRevelar) {
+      if (el.classList.contains("visivel")) { porRevelar.delete(el); continue; }
+      const r = el.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight * 0.9 && r.width > 0) {
+        el.classList.add("visivel");
+        for (const n of $$("[data-conta]", el)) contaAte(n);
+        vigia.unobserve(el);
+        porRevelar.delete(el);
+      }
+    }
+  };
+  let pedido = 0;
+  window.addEventListener("scroll", () => { if (!pedido) pedido = requestAnimationFrame(() => { pedido = 0; revelaVisiveis(); }); }, { passive: true });
+  window.addEventListener("load", revelaVisiveis);
   ativaCursor();
   ativaQuak();
   const lenis = parado ? null : new Lenis({ lerp: 0.09, anchors: { offset: -66 } });
