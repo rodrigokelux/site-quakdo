@@ -1,0 +1,6 @@
+node_modules
+dist
+# Renders do Blender (pesados; refazem-se com os scripts da pasta blender/)
+blender/saida/
+__pycache__/
+.claude/settings.local.json

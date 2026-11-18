@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Ferramenta: fotografa a casa de banho 3D no início (antes) e no fim (depois) da obra, com a mesma câmara.
+     Usada por ferramentas/capta-antes-depois.mjs; as imagens vão para public/antes-depois/. -->
+<html lang="pt-PT">
+<head><meta charset="utf-8" /><style>html, body { margin: 0; background: transparent; } #palco { width: 1600px; height: 1200px; }</style></head>
+<body>
+  <div id="palco"></div>
+  <script type="module">
+    import * as THREE from "three";
+    import { iniciaObra } from "/src/obra3d.js";
+    const q = new URLSearchParams(location.search);
+    const AZ = +(q.get("az") ?? 28), EL = +(q.get("el") ?? 30), D = +(q.get("d") ?? 60);
+    const ALVO = (q.get("alvo") ?? "-0.4,-0.6,2.2").split(",").map(Number);
+    const FOV = +(q.get("fov") ?? 20);
+    const b = (x, y, z) => new THREE.Vector3(x, z, -y);
+    const r = (g) => (g * Math.PI) / 180;
+    const espera = (ms) => new Promise((s) => setTimeout(s, ms));
+    const obra = iniciaObra(document.getElementById("palco"), { aoPronto: () => capta() });
+    function fotografa(t) {
+      obra.define(t);
+      const c = obra.camara;
+      c.clearViewOffset();
+      c.fov = FOV;
+      c.updateProjectionMatrix();
+      const [x, y, z] = ALVO;
+      c.position.copy(b(x + D * Math.sin(r(AZ)) * Math.cos(r(EL)), y - D * Math.cos(r(AZ)) * Math.cos(r(EL)), z + D * Math.sin(r(EL))));
+      c.lookAt(b(x, y, z));
+      obra.renderer.render(obra.cena, c);
+      return obra.renderer.domElement.toDataURL("image/png");
+    }
+    async function capta() {
+      fotografa(0);
+      await espera(1500); // as texturas dos azulejos acabam de carregar
+      const antes = fotografa(0.0001);
+      fotografa(1);
+      await espera(800);
+      const depois = fotografa(0.9999);
+      window.__imagens = { antes, depois };
+    }
+  </script>
+</body>
+</html>

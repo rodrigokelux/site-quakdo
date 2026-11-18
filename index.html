@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quakdo. Tu dizes. Nós fazemos.</title>
+  <meta name="description" content="A Quakdo liga quem precisa de uma obra a técnicos verificados e às lojas dos materiais. Orçamento, pagamento e acompanhamento no mesmo sítio." />
+  <meta name="theme-color" content="#0E1F3D" />
+  <link rel="icon" href="/icone.png" />
+  <link rel="preload" as="image" href="/filme/000.webp" />
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <div class="andamento" aria-hidden="true"><i id="andamento"></i></div>
+
+  <header class="barra" id="barra">
+    <div class="largura barra-dentro">
+      <a href="#topo" class="logo" aria-label="Quakdo, início"><img class="logo-cor" src="/logotipo.png" alt="" height="34" /><img class="logo-branco" src="/logotipo-branco.png" alt="" height="34" /></a>
+      <nav class="barra-nav" aria-label="Secções">
+        <a href="#topo">Como funciona</a>
+        <a href="#app">A app</a>
+        <a href="#antes-depois">Antes e depois</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="/tecnicos.html">Sou técnico</a>
+        <a href="/empresas.html">Empresas</a>
+      </nav>
+      <a class="botao botao-escuro botao-pequeno" href="#comecar"><span>Começar</span><i aria-hidden="true">→</i></a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- O filme: a casa de banho renova-se enquanto se desce a página -->
+    <section class="filme" id="topo" aria-label="Como funciona, passo a passo">
+      <!-- O palco fica preso ao ecrã: a obra em ecrã inteiro e a régua vertical dos passos -->
+      <div class="palco">
+        <canvas id="filme" role="img" aria-label="Uma casa de banho antiga a ser renovada por um pato técnico"></canvas>
+        <div class="veu" aria-hidden="true"></div>
+        <ol class="trilho" aria-hidden="true">
+          <li><b>01</b><span>Pedido</span></li>
+          <li><b>02</b><span>Técnico</span></li>
+          <li><b>03</b><span>Obra</span></li>
+          <li><b>04</b><span>Feito</span></li>
+          <i class="trilho-linha"><i id="trilho-cheio"></i></i>
+        </ol>
+        <p class="desce" aria-hidden="true"><i></i>Desce</p>
+      </div>
+      <!-- Os passos: descem pela página, um atrás do outro, por cima do palco -->
+      <div class="passos largura">
+        <article class="passo heroi" data-t="0">
+          <div class="passo-texto">
+            <p class="rotulo">Obras, do pedido ao serviço feito</p>
+            <h1 data-palavras><span class="amarelo">Tu dizes.</span><br /><span class="linha">Nós fazemos.</span></h1>
+            <p class="lead">Mostra o que precisas. A Quakdo trata do orçamento, encontra técnicos verificados e guarda o teu dinheiro até aprovares o trabalho.</p>
+            <div class="botoes">
+              <a class="botao" data-app href="#"><span>Pedir orçamento</span><i aria-hidden="true">→</i></a>
+              <a class="botao botao-linha" href="/tecnicos.html"><span>Sou técnico</span><i aria-hidden="true">→</i></a>
+            </div>
+          </div>
+        </article>
+        <article class="passo" data-t="0.27" style="--alto: 130vh">
+          <div class="passo-texto">
+            <span class="passo-num" aria-hidden="true">01</span>
+            <p class="rotulo"><b>01</b> Pedido</p>
+            <h2 data-palavras>Mostra o que precisas.</h2>
+            <p class="lead revela">Tiras fotografias ou descreves por palavras. A Quakdo percebe a obra, tira as medidas e calcula logo um orçamento estimado.</p>
+          </div>
+        </article>
+        <article class="passo" data-t="0.45" style="--alto: 110vh">
+          <div class="passo-texto">
+            <span class="passo-num" aria-hidden="true">02</span>
+            <p class="rotulo"><b>02</b> Técnico</p>
+            <h2 data-palavras>Escolhe o técnico.</h2>
+            <p class="lead revela">Técnicos verificados enviam o orçamento deles. Comparas o preço, as datas e as avaliações. A escolha é tua.</p>
+          </div>
+        </article>
+        <article class="passo" data-t="0.7" style="--alto: 170vh">
+          <div class="passo-texto">
+            <span class="passo-num" aria-hidden="true">03</span>
+            <p class="rotulo"><b>03</b> Obra</p>
+            <h2 data-palavras>Acompanha a obra.</h2>
+            <p class="lead revela">Vês cada passo com fotografia e falas com o técnico. O dinheiro fica guardado: ele só recebe cada fase depois de a aprovares.</p>
+          </div>
+        </article>
+        <article class="passo" data-t="1" style="--alto: 120vh">
+          <div class="passo-texto">
+            <span class="passo-num" aria-hidden="true">04</span>
+            <p class="rotulo"><b>04</b> Feito</p>
+            <h2 data-palavras>Aprova e avalia.</h2>
+            <p class="lead revela">Obra feita. Aprovas o trabalho, dás as tuas estrelas e ficas com tudo guardado na app.</p>
+            <div class="botoes revela"><a class="botao" data-app href="#"><span>Pedir orçamento</span><i aria-hidden="true">→</i></a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Faixa de áreas -->
+    <div class="faixa" aria-hidden="true"><div class="faixa-dentro" id="faixa"></div></div>
+
+    <!-- A app: um telemóvel preso ao ecrã, com ecrãs reais da app, que mudam à medida que se desce -->
+    <section class="app" id="app">
+      <div class="largura">
+        <header class="cabeca">
+          <p class="rotulo">A app</p>
+          <h2 data-palavras>A obra toda, <span class="azul">na palma da mão.</span></h2>
+        </header>
+        <div class="app-grelha">
+          <div class="app-palco" aria-hidden="true">
+            <div class="app-luz"></div>
+            <div class="telemovel" id="telemovel">
+              <div class="telemovel-ecra">
+                <img src="/app/B.webp" alt="" width="340" height="740" data-ecra="0" class="ativo" />
+                <img src="/app/H.webp" alt="" width="340" height="740" data-ecra="1" loading="lazy" />
+                <img src="/app/L.webp" alt="" width="340" height="740" data-ecra="2" loading="lazy" />
+                <img src="/app/R.webp" alt="" width="340" height="740" data-ecra="3" loading="lazy" />
+                <img src="/app/T.webp" alt="" width="340" height="740" data-ecra="4" loading="lazy" />
+                <img src="/app/W.webp" alt="" width="340" height="740" data-ecra="5" loading="lazy" />
+              </div>
+            </div>
+            <img class="app-pato pato" src="/patos/cliente.webp" alt="" width="760" height="726" loading="lazy" />
+            <p class="app-conta"><b id="app-num">01</b> / 06</p>
+          </div>
+          <ol class="app-lista">
+            <li class="app-item ativo" data-ecra="0"><b>01</b><h3>Fotografas o problema.</h3><p>Até oito fotografias guiadas. A Quakdo percebe a divisão, as peças e as medidas.</p></li>
+            <li class="app-item" data-ecra="1"><b>02</b><h3>Orçamento na hora.</h3><p>Calculado a partir das tuas escolhas, com o IVA certo e explicado linha a linha.</p></li>
+            <li class="app-item" data-ecra="2"><b>03</b><h3>Técnicos verificados.</h3><p>Habilitações conferidas pela equipa. Comparas o preço, as datas e as avaliações.</p></li>
+            <li class="app-item" data-ecra="3"><b>04</b><h3>Vês o técnico a chegar.</h3><p>No mapa, ao vivo, com a distância e a hora prevista. Os materiais já vêm levantados.</p></li>
+            <li class="app-item" data-ecra="4"><b>05</b><h3>Cada tarefa, com fotografia.</h3><p>Acompanhas a obra fase a fase, sem teres de lá estar.</p></li>
+            <li class="app-item" data-ecra="5"><b>06</b><h3>Pagas no fim. E avalias.</h3><p>O dinheiro fica guardado até aprovares. Depois, dás as tuas estrelas.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Antes e depois: a mesma casa de banho, no início e no fim da obra (dados da obra são de demonstração) -->
+    <section class="antes-depois" id="antes-depois">
+      <div class="largura">
+        <header class="cabeca">
+          <p class="rotulo">Antes e depois</p>
+          <h2 data-palavras>Do jeito que estava <span class="azul">ao jeito que sonhaste.</span></h2>
+          <p class="lead revela">Arrasta para ver a diferença. Uma casa de banho dos anos 80, renovada por um técnico da Quakdo em seis dias.</p>
+        </header>
+        <div class="ad-grelha">
+          <div class="comparador revela" id="comparador" style="--corte: 50%">
+            <img class="ad-depois" src="/antes-depois/casa-de-banho-depois.webp" alt="Depois: casa de banho com azulejo azul e branco, base de duche, móvel novo e espelho redondo" width="1600" height="1200" loading="lazy" draggable="false" />
+            <div class="ad-antes"><img src="/antes-depois/casa-de-banho-antes.webp" alt="Antes: casa de banho antiga, com azulejo bege, banheira e louças gastas" width="1600" height="1200" loading="lazy" draggable="false" /></div>
+            <span class="ad-etiqueta ad-etiqueta-antes" aria-hidden="true">Antes</span>
+            <span class="ad-etiqueta ad-etiqueta-depois" aria-hidden="true">Depois</span>
+            <span class="ad-pega" aria-hidden="true"><i>‹</i><i>›</i></span>
+            <input class="ad-controlo" type="range" min="0" max="100" value="50" aria-label="Comparar o antes e o depois" />
+          </div>
+          <aside class="ad-obra revela">
+            <p class="rotulo">A obra</p>
+            <h3>Casa de banho em Campo de Ourique</h3>
+            <ul class="ad-feito">
+              <li>Banheira trocada por base de duche</li>
+              <li>Azulejo novo, do chão ao teto</li>
+              <li>Louças, móvel e espelho novos</li>
+            </ul>
+            <dl class="ad-dados">
+              <div><dt>Duração</dt><dd>6 dias</dd></div>
+              <div><dt>Avaliação</dt><dd>5,0 <i>★</i></dd></div>
+            </dl>
+            <blockquote>“Mandei as fotografias ao fim do dia e de manhã já tinha três orçamentos.”<cite>Marta Sousa, cliente</cite></blockquote>
+            <a class="botao" data-app href="#"><span>Quero uma assim</span><i aria-hidden="true">→</i></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Especialistas -->
+    <section class="especialistas" id="especialistas">
+      <div class="largura">
+        <header class="cabeca">
+          <p class="rotulo">Especialistas</p>
+          <h2 data-palavras>Para cada obra, o pato certo.</h2>
+        </header>
+        <div class="esp-grelha">
+          <ol class="esp-lista" id="esp-lista">
+            <li data-pato="canalizador"><button type="button"><b>01</b><span>Canalizador</span><em>Torneiras, canos, casas de banho.</em></button></li>
+            <li data-pato="eletricista"><button type="button"><b>02</b><span>Eletricista</span><em>Quadros, tomadas, iluminação.</em></button></li>
+            <li data-pato="pintor"><button type="button"><b>03</b><span>Pintor</span><em>Paredes, tetos, acabamentos.</em></button></li>
+            <li data-pato="tecnico"><button type="button"><b>04</b><span>Técnico de obra</span><em>Cozinhas, pavimentos, remodelações.</em></button></li>
+          </ol>
+          <div class="esp-palco" id="esp-palco">
+            <img class="pato" data-pato="canalizador" src="/patos/canalizador.webp" alt="Pato canalizador, de boné e macacão, com uma chave de canos" width="760" height="726" />
+            <img class="pato" data-pato="eletricista" src="/patos/eletricista.webp" alt="Pato eletricista, de capacete laranja, com um rolo de cabo" width="760" height="726" loading="lazy" />
+            <img class="pato" data-pato="pintor" src="/patos/pintor.webp" alt="Pato pintor, de branco, com rolo e balde de tinta" width="760" height="726" loading="lazy" />
+            <img class="pato" data-pato="tecnico" src="/patos/tecnico.webp" alt="Pato técnico, de capacete branco e macacão com ferramentas no bolso" width="760" height="726" loading="lazy" />
+            <p class="esp-conta" aria-hidden="true"><b id="esp-num">01</b> / 04</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Números e avaliações (valores de demonstração: trocar pelos reais antes de publicar) -->
+    <section class="provas" id="avaliacoes">
+      <div class="provas-azulejos" aria-hidden="true"></div>
+      <div class="largura">
+        <header class="cabeca">
+          <p class="rotulo">Avaliações</p>
+          <h2 data-palavras>Quem já fez obra <span class="amarelo">diz quak.</span></h2>
+        </header>
+        <ul class="numeros revela">
+          <li><b><span data-conta="12480">0</span></b><span>obras feitas</span></li>
+          <li><b><span data-conta="4.8" data-casas="1">0</span><i>★</i></b><span>avaliação média</span></li>
+          <li><b><span data-conta="1350">0</span></b><span>técnicos verificados</span></li>
+          <li><b><span data-conta="2">0</span> h</b><span>até ao primeiro orçamento</span></li>
+        </ul>
+        <ul class="opinioes">
+          <li class="revela">
+            <p class="estrelas" aria-label="5 estrelas">★★★★★</p>
+            <blockquote>Mandei as fotografias ao fim do dia e de manhã já tinha três orçamentos. O Nuno trocou a banheira em dois dias.</blockquote>
+            <p class="quem-diz"><span class="iniciais" aria-hidden="true">MS</span><span><b>Marta Sousa</b>Casa de banho · Lisboa</span></p>
+          </li>
+          <li class="revela">
+            <p class="estrelas" aria-label="5 estrelas">★★★★★</p>
+            <blockquote>Gostei de só pagar cada fase depois de ver as fotografias. Nunca me senti às escuras com a obra.</blockquote>
+            <p class="quem-diz"><span class="iniciais" aria-hidden="true">JP</span><span><b>João Pereira</b>Cozinha · Porto</span></p>
+          </li>
+          <li class="revela">
+            <p class="estrelas" aria-label="5 estrelas">★★★★★</p>
+            <blockquote>Precisava de um eletricista num sábado. Encontrei um, vi-o a chegar no mapa e ficou tudo resolvido.</blockquote>
+            <p class="quem-diz"><span class="iniciais" aria-hidden="true">IR</span><span><b>Inês Rocha</b>Eletricidade · Odivelas</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Para quem -->
+    <section class="quem" id="para-quem">
+      <div class="largura">
+        <header class="cabeca">
+          <p class="rotulo">Para quem</p>
+          <h2 data-palavras>Uma obra junta muita gente. <span class="azul">A Quakdo põe todos no mesmo sítio.</span></h2>
+        </header>
+        <div class="tres">
+          <article class="revela">
+            <div class="moldura"><img class="pato" data-desliza="-18" src="/patos/cliente.webp" alt="O pato da Quakdo" width="760" height="726" loading="lazy" /></div>
+            <p class="rotulo"><b>A</b> Clientes</p>
+            <h3>Tens uma obra</h3>
+            <p>Mostras o que precisas, recebes orçamentos de técnicos verificados, escolhes e acompanhas tudo, até ao fim.</p>
+            <a class="seta" data-app href="#">Pedir orçamento <i aria-hidden="true">→</i></a>
+          </article>
+          <article class="revela">
+            <div class="moldura"><img class="pato" data-desliza="-18" src="/patos/tecnico.webp" alt="O pato técnico" width="760" height="726" loading="lazy" /></div>
+            <p class="rotulo"><b>B</b> Técnicos</p>
+            <h3>És técnico</h3>
+            <p>Recebes pedidos perto de ti, com as medidas e os materiais já preparados. És pago pela plataforma, fase a fase.</p>
+            <a class="seta" href="/tecnicos.html">Saber mais <i aria-hidden="true">→</i></a>
+          </article>
+          <article class="revela">
+            <div class="moldura"><img class="pato" data-desliza="-18" src="/patos/empresa.webp" alt="Três patos: um gestor de fato, um técnico e um coordenador" width="760" height="726" loading="lazy" /></div>
+            <p class="rotulo"><b>C</b> Empresas</p>
+            <h3>Tens uma equipa</h3>
+            <p>A tua empresa aceita obras como um só e distribui as tarefas pelos técnicos certos. Cada um vê apenas as suas.</p>
+            <a class="seta" href="/empresas.html">Saber mais <i aria-hidden="true">→</i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promessas -->
+    <section class="promessas">
+      <div class="largura">
+        <header class="cabeca">
+          <p class="rotulo">O que prometemos</p>
+          <h2 data-palavras>Regras claras, iguais para todos.</h2>
+        </header>
+        <ul class="quatro">
+          <li class="revela"><i>01</i><b>Técnicos validados</b><span>Documentos conferidos pela equipa, um a um.</span></li>
+          <li class="revela"><i>02</i><b>Preço fechado</b><span>Sabes quanto pagas antes de a obra começar.</span></li>
+          <li class="revela"><i>03</i><b>Dinheiro guardado</b><span>Só sai quando aprovas o trabalho.</span></li>
+          <li class="revela"><i>04</i><b>Supervisão</b><span>A equipa Quakdo acompanha as obras que a pedem.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Perguntas frequentes -->
+    <section class="perguntas" id="perguntas">
+      <div class="largura perguntas-grelha">
+        <header class="cabeca">
+          <p class="rotulo">Perguntas</p>
+          <h2 data-palavras>Ainda tens dúvidas?</h2>
+          <p class="lead revela">As perguntas que mais nos fazem. Se faltar alguma, o pato responde na app.</p>
+        </header>
+        <div class="lista-perguntas">
+          <details class="revela" open><summary>Quanto custa usar a Quakdo?<i aria-hidden="true"></i></summary><p>Pedir orçamento é grátis. Pagas apenas a obra que aceitares, e o valor que vês já inclui tudo: mão de obra, materiais e a taxa da plataforma.</p></details>
+          <details class="revela"><summary>Como sei que o técnico é de confiança?<i aria-hidden="true"></i></summary><p>Cada técnico envia os documentos e as habilitações, que a nossa equipa confere um a um. Antes de escolheres, vês as avaliações de outros clientes e as obras que já fez.</p></details>
+          <details class="revela"><summary>E se a obra não ficar bem feita?<i aria-hidden="true"></i></summary><p>O dinheiro fica guardado na Quakdo e só sai quando aprovas cada fase. Se alguma coisa não estiver bem, abres uma reclamação na app e a nossa equipa ajuda a resolver.</p></details>
+          <details class="revela"><summary>O orçamento da app é o preço final?<i aria-hidden="true"></i></summary><p>A app dá-te logo uma estimativa. Depois, os técnicos enviam o preço fechado deles, e só aceitas o que te servir.</p></details>
+          <details class="revela"><summary>Os materiais estão incluídos?<i aria-hidden="true"></i></summary><p>Podes escolher. A Quakdo trata dos materiais com as lojas parceiras e o técnico levanta-os já prontos, com um código.</p></details>
+          <details class="revela"><summary>Em que zonas funciona?<i aria-hidden="true"></i></summary><p>Começámos na Grande Lisboa e estamos a chegar a mais cidades. Indicas a morada no pedido e vês logo se há técnicos perto de ti.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Começar -->
+    <section class="comecar" id="comecar">
+      <div class="comecar-azulejos" aria-hidden="true"></div>
+      <div class="largura comecar-dentro">
+        <div>
+          <p class="rotulo">Começar</p>
+          <h2 data-palavras><span class="linha">Tens uma obra?</span><br /><span class="linha">Diz quak.</span></h2>
+          <p class="lead revela">Do problema ao serviço feito, com o pato sempre ao teu lado.</p>
+          <div class="botoes revela">
+            <a class="botao botao-amarelo botao-grande" data-app href="#"><span>Pedir orçamento</span><i aria-hidden="true">→</i></a>
+            <a class="botao botao-claro botao-grande" href="/tecnicos.html"><span>Sou técnico</span><i aria-hidden="true">→</i></a>
+          </div>
+          <div class="revela" data-lojas></div>
+        </div>
+        <img class="pato" data-desliza="-30" src="/patos/cliente.webp" alt="" width="760" height="726" loading="lazy" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="largura rodape-dentro">
+      <img src="/logotipo-branco.png" alt="Quakdo" height="30" />
+      <nav aria-label="Rodapé">
+        <a href="#topo">Como funciona</a>
+        <a href="#antes-depois">Antes e depois</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#perguntas">Perguntas</a>
+        <a href="/tecnicos.html">Para técnicos</a>
+        <a href="/empresas.html">Para empresas</a>
+      </nav>
+      <p>© 2026 Quakdo. Tu dizes. Nós fazemos.</p>
+    </div>
+    <p class="marca-gigante revela" aria-hidden="true"><span>quak</span><span>do</span></p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
